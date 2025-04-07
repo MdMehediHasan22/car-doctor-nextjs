@@ -30,7 +30,7 @@ const tailwindConfig = {
           secondary: "teal",    // Custom secondary color
           accent: "#F1C40F",    // Example of adding another color
           neutral: "#2A303C",   // Neutral color
-          "base-100": "#F4F4F9", // Light background color
+          "base-100": "#F4F4F9 ", // Light background color
         },
       },
     ],

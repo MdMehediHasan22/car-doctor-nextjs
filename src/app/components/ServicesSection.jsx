@@ -2,7 +2,8 @@ import Image from "next/image";
 import React from "react";
 import dbConnect from "../lib/dbConnect";
 import Link from "next/link";
-// import { FaArrowRight } from "react-icons/fa";
+import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
+
 
 
 export default async function ServicesSection(){
@@ -10,10 +11,10 @@ export default async function ServicesSection(){
    const serviceCollection = dbConnect("test_services") 
    const data = await serviceCollection.find({}).toArray();
     
-    return <div className="grid grid-cols-12">{data.map((item)=>{
+    return <div className="grid grid-cols-12 gap-4 container mx-auto">{data.map((item)=>{
       return (
         <div 
-        className="col-span-12 md:col-span-6 lg:col-span-4 h-full border" 
+        className="col-span-12 md:col-span-6 lg:col-span-4 p-4 h-full border border-gray-200" 
         key={item._id}>
            <figure className="w-full h-3/4 flex justify-center items-center">
               <Image
@@ -34,7 +35,7 @@ export default async function ServicesSection(){
                   href={`/services/${item._id}`}
                   className="text-orange-500"
                 >
-                  {/* <FaArrowRight /> */}
+                  <FaArrowRight />
                 </Link>
               </div>
 

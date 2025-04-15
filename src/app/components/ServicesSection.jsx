@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import dbConnect from "../lib/dbConnect";
+import dbConnect, { collectionNamesObj } from "../lib/dbConnect";
 import Link from "next/link";
 import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 
@@ -8,7 +8,7 @@ import { FaArrowRight } from "@react-icons/all-files/fa/FaArrowRight";
 
 export default async function ServicesSection(){
    // const res = await fetch("/services.json");
-   const serviceCollection = dbConnect("test_services") 
+   const serviceCollection = dbConnect(collectionNamesObj.servicesCollection); 
    const data = await serviceCollection.find({}).toArray();
     
     return <div className="grid grid-cols-12 gap-4 container mx-auto">{data.map((item)=>{
